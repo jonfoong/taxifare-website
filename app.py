@@ -23,13 +23,17 @@ dt_str = dt.strftime("%Y/%m/%d %H:%M:%S")
 
 with pickup_col:
     st.caption("Pickup coordinates")
-    p_longitude = st.number_input("Pickup longitude", format = "%.6f")
-    p_latitude = st.number_input("Pickup latitude", format = "%.6f")
+    p_longitude = st.number_input("Pickup longitude", format = "%.6f",
+                                  min_value=-74.3, max_value=-73.7)
+    p_latitude = st.number_input("Pickup latitude", format = "%.6f",
+                                 min_value=40.5, max_value=40.9)
 
 with dropoff_col:
     st.caption("Dropoff coordinates")
-    d_longitude = st.number_input("Dropoff longitude", format = "%.6f")
-    d_latitude = st.number_input("Dropoff latitude", format = "%.6f")
+    d_longitude = st.number_input("Dropoff longitude", format = "%.6f",
+                                  min_value=-74.3, max_value=-73.7)
+    d_latitude = st.number_input("Dropoff latitude", format = "%.6f",
+                                 min_value=40.5, max_value=40.9)
 
 with passengers_col:
     st.caption("Number of passengers")
